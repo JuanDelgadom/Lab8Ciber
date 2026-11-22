@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+  SIMULACIÓN PEDAGÓGICA - Laboratorio 8 - Grupo 114
+  Página señuelo tipo "evil-twin" que imita el portal de "Colombia Aprende".
+  OJO: Colombia Aprende es una entidad REAL; esta imitación se usa ÚNICAMENTE
+  en el laboratorio contenido (localhost), nunca contra personas o sistemas reales.
+  El formulario envía a /registro, donde el servidor DESCARTA usuario y
+  contraseña sin leerlos y solo registra que hubo un envío.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar sesión · Colombia Aprende</title>
+  <!-- Estilos básicos de Bootstrap 5.3.3 servidos localmente desde static/
+       (funciona sin internet). -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body class="bg-light">
+  <div class="container min-vh-100 d-flex align-items-center justify-content-center py-4">
+    <div class="card shadow-sm" style="max-width: 420px; width: 100%;">
+      <div class="card-body p-4">
+
+        <h5 class="fw-bold mb-3">
+          <span class="badge bg-primary me-1">CA</span> Colombia Aprende
+        </h5>
+
+        <h4 class="mb-1">Inicia sesión en tu cuenta</h4>
+        <p class="text-muted small mb-4">
+          Usa tu correo <strong>@colombiaaprende.edu.co</strong>
+        </p>
+
+        <!-- El token del destinatario viaja oculto; es opaco y no identifica a nadie dentro del portal -->
+        <form action="{{ url_for('registro') }}" method="post" autocomplete="off" novalidate>
+          <input type="hidden" name="t" value="{{ token }}">
+
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Correo</label>
+            <input id="usuario" name="usuario" type="email" class="form-control"
+                   placeholder="usuario@colombiaaprende.edu.co" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input id="password" name="password" type="password" class="form-control"
+                   placeholder="Tu contraseña" required>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check mb-0">
+              <input class="form-check-input" type="checkbox" id="recordar">
+              <label class="form-check-label small" for="recordar">Mantener sesión iniciada</label>
+            </div>
+            <a href="#" onclick="return false;" class="small">¿Olvidaste tu contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+        </form>
+
+        <p class="text-muted small text-center mt-4 mb-0">
+          ¿Problemas para ingresar? Contacta al soporte.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

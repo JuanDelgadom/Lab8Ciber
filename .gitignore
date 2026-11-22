@@ -1,0 +1,5 @@
+logs/*.log
+mail/buzon/*.eml
+mail/cola_envios.log
+mail/mapeo_tokens.csv
+__pycache__/

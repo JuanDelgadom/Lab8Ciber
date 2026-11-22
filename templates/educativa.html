@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+  SIMULACIÓN PEDAGÓGICA - Laboratorio 8 - Grupo 114
+  Página educativa (reveal). Se muestra INMEDIATAMENTE después de cualquier
+  interacción con el señuelo. Explica la simulación y redirige al portal legítimo.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Esto fue una simulación de phishing · Colombia Aprende</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body class="bg-light">
+  <div class="container py-5" style="max-width: 680px;">
+    <div class="card shadow-sm">
+      <div class="card-body p-4 p-md-5">
+
+        <div class="alert alert-success" role="alert">
+          🛡️ <strong>Tranquilo/a: esto fue una simulación de phishing.</strong>
+        </div>
+
+        <p class="lead">
+          No ingresaste a ningún sistema real y <strong>no guardamos tu contraseña</strong>
+          (de hecho, este ejercicio está diseñado para que sea imposible capturarla).
+          Fue un ejercicio interno de concientización</p>
+
+        <hr class="my-4">
+
+        <h5>¿Qué señales delataban que era falso?</h5>
+        <ul>
+          <li><strong>El remitente:</strong> dominios parecidos pero no idénticos
+              (p. ej. <code>colombiaaprende.com.co</code> en vez del real <code>colombiaaprende.edu.co</code>).</li>
+          <li><strong>La urgencia:</strong> mensajes que presionan a actuar "ya"
+              o amenazan con bloquear la cuenta.</li>
+          <li><strong>El enlace:</strong> la URL real no coincidía con el portal
+              corporativo. Pasa el cursor sobre los enlaces antes de hacer clic.</li>
+          <li><strong>El contexto:</strong> una solicitud inesperada de credenciales
+              por correo casi nunca es legítima.</li>
+          <li><strong>El diseño:</strong> Los estilos y diseño de la pagina en algunos casos
+              son notablemente diferentes a los usados en la pagina oficial.</li>
+        </ul>
+
+        <hr class="my-4">
+
+        <h5>Checklist rápido antes de hacer clic</h5>
+        <ol>
+          <li>Verifica el <strong>dominio completo</strong> del remitente y del enlace.</li>
+          <li>Desconfía de la <strong>urgencia</strong> y las amenazas.</li>
+          <li>Nunca ingreses tu contraseña desde un enlace de correo: entra tú
+              directamente al portal escribiendo la dirección.</li>
+          <li>Activa el <strong>segundo factor (MFA)</strong> siempre que puedas.</li>
+          <li>Ante la duda, <strong>reporta</strong> al soporte.</li>
+        </ol>
+
+        <a class="btn btn-primary w-100 mt-3" href="{{ portal_legitimo }}"
+           target="_blank" rel="noopener noreferrer">
+          Ir a Colombia Aprende (material educativo) →
+        </a>
+
+       
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
